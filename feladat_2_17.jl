@@ -1,13 +1,12 @@
 using Distributions, Plots
 
-x_atlag_hatar = 1.54
+mu0 = 1.5
+mu1 = 1.54
 
 sigma = 3e-2
+n = 10.8
+ndist0 = Normal(mu0,sigma/sqrt(n))
+ndist1 = Normal(mu1,sigma/sqrt(n))
 
-ndist = Normal(0,sigma)
-
-q1 = quantile(ndist,0.99)
-q2 = quantile(ndist,0.02)
-
-println(q1/sigma)
-println(q2/sigma)
+display(quantile(ndist0,0.99))
+display(quantile(ndist1,0.02))
